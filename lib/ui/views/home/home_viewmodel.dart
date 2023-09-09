@@ -119,8 +119,9 @@ class HomeViewModel extends BaseViewModel {
     String currentVersion = await _managerAPI.getCurrentManagerVersion();
 
     // add v to current version
+    // remove '-API23' from current version
     if (!currentVersion.startsWith('v')) {
-      currentVersion = 'v$currentVersion';
+      currentVersion = 'v${currentVersion.replaceFirst('-API23', '')}';
     }
 
     _latestManagerVersion =
@@ -453,7 +454,7 @@ class HomeViewModel extends BaseViewModel {
   }
 
   Future<Map<String, dynamic>?> getLatestManagerRelease() {
-    return _githubAPI.getLatestManagerRelease(_managerAPI.defaultManagerRepo);
+    return _githubAPI.getLatestRelease('kitadai31/revanced-manager-android6-7');
   }
 
   Future<Map<String, dynamic>?> getLatestPatchesRelease() {

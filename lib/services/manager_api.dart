@@ -389,10 +389,12 @@ class ManagerAPI {
   }
 
   Future<String?> getLatestManagerVersion() async {
-    return await _revancedAPI.getLatestReleaseVersion(
-      '.apk',
-      defaultManagerRepo,
-    );
+    final release = await _githubAPI.getLatestRelease('kitadai31/revanced-manager-android6-7');
+    if (release != null) {
+      return release['tag_name'];
+    } else {
+      return null;
+    }
   }
 
   Future<String?> getLatestIntegrationsVersion() async {
