@@ -1,6 +1,6 @@
 name: 🐞 Bug report
-description: Create a new bug report.
-title: 'bug: <title>'
+description: Report a very clearly broken issue.
+title: 'bug: '
 labels: [bug]
 body:
   - type: markdown
@@ -8,20 +8,47 @@ body:
       value: |
         # ReVanced Manager bug report
 
-        Please check for existing issues [here](https://github.com/revanced/revanced-manager/labels/bug) before creating a new one.
-  - type: textarea
+        Important to note that your issue may have already been reported before. Please check for existing issues [here](https://github.com/revanced/revanced-manager/labels/bug).
+
+  - type: dropdown
     attributes:
-      label: Bug description
-      description: |
-        - Describe your bug in detail
-        - Add steps to reproduce the bug if possible (Step 1. Download some files. Step 2. ...)
-        - Add images and videos if possible
-        - List selected patches if applicable
+      label: Type
+      options:
+        - Error while patching
+        - Cosmetic
+        - Other
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Version of ReVanced Manager and version & name of application you tried to patch
+      label: Bug description
+      description: How did you find the bug? Any additional details that might help?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Add the steps to reproduce this bug including your environment.
+      placeholder: Step 1. Download some files. Step 2. ...
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Android version and device info
+      description: Android version and model information
+      placeholder: Galaxy S6 Android 7.0
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Manager version
+      description: Manager version used.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Target app name and version
+      description: App you tried to patch.
     validations:
       required: true
   - type: dropdown
@@ -31,22 +58,48 @@ body:
         - Non-root
         - Root
     validations:
-      required: false
+      required: true
   - type: textarea
     attributes:
-      label: Device logs
-      description: Export logs in ReVanced Manager settings.
+      label: Patches selected.
+      description: Patches you selected for the app.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Device logs (export from Manager settings).
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks. Please export after the problem occured.
       render: shell
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Patcher logs
-      description: Export logs in "Patcher" screen.
+      label: Installer logs (export from Installer menu option) [unneeded if issue is not during patching].
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
     validations:
       required: false
+  - type: textarea
+    attributes:
+      label: Screenshots or videos
+      description: Add screenshots or videos that show the bug here.
+      placeholder: Drag and drop the screenshots/videos into this box.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Solution
+      description: If applicable, add a possible solution.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add additional context here.
+    validations:
+      required: false
   - type: checkboxes
+    id: acknowledgements
     attributes:
       label: Acknowledgements
       description: Your issue will be closed if you don't follow the checklist below!
@@ -55,7 +108,9 @@ body:
           required: true
         - label: I have chosen an appropriate title.
           required: true
-        - label: All requested information has been provided properly.
+        - label: I filled out all of the requested information in this issue properly.
           required: true
-        - label: The issue is solely related to the ReVanced Manager
+        - label: The issue is related solely to the ReVanced Manager and not related to revanced patches
+          required: true
+        - label: I have written the title and contents in English.
           required: true
