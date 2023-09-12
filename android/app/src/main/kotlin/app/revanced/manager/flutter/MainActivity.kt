@@ -18,6 +18,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.flow.collect  //needed for kotlin 1.8
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter

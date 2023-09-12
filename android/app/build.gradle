@@ -86,7 +86,11 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // ReVanced
-    implementation "app.revanced:revanced-patcher:14.2.2"
+    // This library does not exist on the Internet!
+    // To build, clone revanced-patcher and change kotlin-reflact version from 1.9.0 to 1.8.22.
+    // Then change the version name and publish to Maven local.
+    // This is needed for coreLibraryDesugaring on AGP 7.4.2.
+    implementation "app.revanced:revanced-patcher:14.2.2-kotlin1.8"
 
     // Signing & aligning
     implementation("org.bouncycastle:bcpkix-jdk15on:1.70")
