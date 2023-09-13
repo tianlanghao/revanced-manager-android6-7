@@ -10,12 +10,11 @@ See also: https://github.com/kitadai31/revanced-patches-android6-7
 ## Download
 Go to [Releases](https://github.com/kitadai31/revanced-manager-android6-7/releases) page
 
-※ All Android 6.0 specific issues are solved.  
-`Overlay Buttons` patch is selectable now.
+※ All Android 6.0 specific issues are solved. You can use `Overlay Buttons` patch now!
 
 <details>
 
-<summary>Old information</summary>
+<summary>(Old information)</summary>
 
 **⚠ Limitations on Android 6.0 ⚠**
 
